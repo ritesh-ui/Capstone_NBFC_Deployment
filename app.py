@@ -14,8 +14,8 @@ def home():
     
 def value_predict(array_list):
     predict_list=np.array(array_list).reshape(1,9)
-    model=pickle.load(open("C:/Users/Ritesh/capstone_project/venv/rf.pkl","rb")) 
-    scaler=pickle.load(open("C:/Users/Ritesh/capstone_project/venv/scaler.pkl","rb"))
+    model=pickle.load(open("rf.pkl","rb")) 
+    scaler=pickle.load(open("scaler.pkl","rb"))
     predict_list=scaler.transform(predict_list)
     prediction = model.predict(predict_list)[0]
     return prediction,array_list
