@@ -1,0 +1,64 @@
+<! DOCTYPE HTML>
+<html>
+<Head>
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	
+	<link rel="stylesheet" type='text/css' href="{{url_for('static',filename='main.css')}}" >
+	
+	{% if title %}
+		<title> My Project - {{title}} </title>
+	{% else %}
+		<title> My Project - Capstone Project  </title>
+	{%endif%}
+</Head>
+<Body>
+	<header class="site-header">
+  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+    <div class="container">
+      <a class="navbar-brand mr-4" href="/">NBFC PROJECT</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+	</header>
+	
+	<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-8">
+	{% with messages= get_flashed_messages(with_categories=true) %}
+		{% if messages %}
+			{% for category,message in messages %}
+				<div class ="alert alert-{{ category }} ">
+				{{ message }} 
+				</div>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+      {% block content %}{% endblock %}
+    </div>
+    <div class="col-md-4">
+      <div class="content-section">
+        <h3>What is Foreclosure ?</h3>
+        <p class='text-muted'>Foreclosure is a legal process in which a lender attempts to recover the balance of a loan from a borrower who has stopped making payments to the lender by forcing the sale of the asset used as the collateral for the loan. Foreclosures costs are high and lenders want to find a suitable solution to avoid foreclosures.
+        </p>
+		<h3> Why is it important ?</h3>
+		<p class='text-muted'>Recent reports show that unemployment applications have risen drastically – with nearly 5 million salaried job losses.Troubling economic factors may mean that many homeowners may unfortunately struggle to keep up with their monthly payments – potentially leading to a higher rate of foreclosures. Due to the economic impact of COVID19, we can expect to see a rise in foreclosed properties over the next several months.Hence from NBFCs point of view it has become utter importance to predict foreclosure for upcoming months. As delay in taking prompt action may result in huge loss for NBFCs.
+		</p>
+      </div>
+	</div>
+	</div>
+	</main>
+	
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</Body>
+</html>

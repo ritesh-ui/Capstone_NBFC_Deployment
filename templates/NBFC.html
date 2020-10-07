@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{% block content %} 
+	<CENTER><H1>    ABC BANK</H1></CENTER>
+<P>
+<b>Please fill up the form to know about the FORECLOSURE status :- <p></b>
+<FORM action="/result" method="POST">
+	<LABEL FOR='COMPLETED_TENURE'> COMPLETED TENURE </LABEL>
+	<INPUT TYPE='TEXT' NAME='COMPLETED_TENURE' ID='COMPLETED_TENURE'><small> <b>In months</b></small><BR>
+	<LABEL FOR='DIFF_CURRENT_INTEREST_RATE_MAX_MIN'> CURRENT INTEREST RATE MAX MIN DIFFERENCE   </LABEL>  
+	<INPUT TYPE='TEXT' NAME='DIFF_CURRENT_INTEREST_RATE_MAX_MIN' ID='DIFF_CURRENT_INTEREST_RATE_MAX_MIN'><small> <b>Do not include % sign</b></small> <BR>
+	<LABEL FOR='DIFF_ORIGINAL_CURRENT_INTEREST_RATE'> ORIGINAL and CURRENT INTEREST RATE DIFFERENCE </LABEL>
+	<INPUT TYPE='TEXT' NAME='DIFF_ORIGINAL_CURRENT_INTEREST_RATE' ID='DIFF_ORIGINAL_CURRENT_INTEREST_RATE'> <small> <b>Do not include % sign </b> </small> <BR>
+	<LABEL FOR='EMI_DUEAMT'> EMI DUEAMT  </LABEL> 
+	<INPUT TYPE='TEXT' NAME='EMI_DUEAMT' ID='EMI_DUEAMT'><small> <b>Example- 1000</b></small><BR>
+	<LABEL FOR='LATEST_TRANSACTION_MONTH'> LATEST TRANSACTION MONTH </LABEL> 
+	<INPUT TYPE='TEXT' NAME='LATEST_TRANSACTION_MONTH' ID='LATEST_TRANSACTION_MONTH'> <small><b> Choose between 1 - 12 </b> </small> <BR>
+	<LABEL FOR='Mean_Interest_Rate'> Mean Interest Rate   </LABEL>
+	<INPUT TYPE='TEXT' NAME='Mean_Interest_Rate' ID='Mean_Interest_Rate'>  <small><b> Do not include % sign </b></small> <BR>
+	<LABEL FOR='PAID_AMOUNT'> AMOUNT PAID</LABEL>
+	<INPUT TYPE='TEXT' NAME='PAID_AMOUNT' ID='PAID_AMOUNT'><BR>
+	<LABEL FOR='LAP'> Is loan against property ? </LABEL>
+	<select name="LAP" id="LAP">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+	</SELECT><BR>
+	<LABEL FOR='STLAP'> Is it short term loan against property ?</LABEL>
+	<select name="STLAP" id="STLAP">
+	<option value="1">Yes</option>
+	<option value="0">No</option>
+	</SELECT><BR>
+	<INPUT TYPE='SUBMIT' VALUE='SUBMIT'>
+	
+</FORM>
+{% endblock content %}
